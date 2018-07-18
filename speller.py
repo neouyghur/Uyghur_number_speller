@@ -1,6 +1,4 @@
-
 import argparse
-
 
 n1 = ['', 'bir', 'ikki', 'üç', 'töt', 'beş', 'alte', 'yette', 'sekkiz', 'toqquz']
 n2 = ['', 'on', 'yigirme', 'ottuz', 'qiriq', 'ellik', 'atmiş', 'yetmiş', 'seksen', 'toqsen']
@@ -23,9 +21,8 @@ def only_3_digits_to_str(n):
         result = (n2[int(n_str[0])] + ' ' + n1[int(n_str[1])]).lstrip().rstrip()
     else:
         s2 = (n2[int(n_str[1])] + ' ' + n1[int(n_str[2])]).lstrip().rstrip()
-        if n_str[0] == '1':
-            s1 = 'yüz'
-        elif n_str[0] == '0':
+
+        if n_str[0] == '0':
             s1 = ''
         else:
             s1 = n1[int(n_str[0])] + ' yüz'
@@ -44,12 +41,11 @@ def n_2_str(n_num):
         if n_str == 'nöl':
             n_str = ''
         thousands = only_3_digits_to_str(int(n_num_s[-6:-3]))
-        if thousands == 'bir':
-            n_str = 'bin ' + n_str
-        elif thousands == 'nöl':
+
+        if thousands == 'nöl':
             pass
         else:
-            n_str = thousands + ' bin ' + n_str
+            n_str = thousands + ' ming ' + n_str
     if n > 6:
         millions = only_3_digits_to_str(int(n_num_s[-9:-6]))
         if millions == 'nöl':
