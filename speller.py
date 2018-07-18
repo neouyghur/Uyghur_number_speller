@@ -2,16 +2,16 @@
 import argparse
 
 
-n1 = ['', 'bir', 'iki', 'üç', 'dört', 'beş', 'altı', 'yedi', 'sekiz', 'dokuz']
-n2 = ['', 'on', 'yirmi', 'otuz', 'kırk', 'elli', 'altmış', 'yetmiş', 'seksen', 'doksan']
+n1 = ['', 'bir', 'ikki', 'üç', 'töt', 'beş', 'alte', 'yette', 'sekkiz', 'toqquz']
+n2 = ['', 'on', 'yigirme', 'ottuz', 'qiriq', 'ellik', 'atmiş', 'yetmiş', 'seksen', 'toqsen']
 
-months = ['ocak', 'şubat', 'mart', 'nisan', 'mayıs', 'haziran', 'temmuz', 'ağustos', 'eylül', 'ekim', 'kasım', 'aralık']
+months = ['yanvar', 'févral', 'mart', 'aprél', 'may', 'iyun', 'iyul', 'avğust', 'séntebir', 'öktebir', 'noyabir', 'dékabir']
 month_durations = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 
 def only_3_digits_to_str(n):
     if n == 0:
-        return 'sıfır'
+        return 'nöl'
     n_str = str(n)
     len_s = len(n_str)
     if len_s > 3:
@@ -32,7 +32,6 @@ def only_3_digits_to_str(n):
         result = (s1 + ' ' + s2).lstrip().rstrip()
     return result
 
-
 def n_2_str(n_num):
     n_num_s = str(n_num)
     len_s = len(n_num_s)
@@ -42,27 +41,27 @@ def n_2_str(n_num):
 
     n_str = only_3_digits_to_str(int(n_num_s[-3:]))
     if n > 3:
-        if n_str == 'sıfır':
+        if n_str == 'nöl':
             n_str = ''
         thousands = only_3_digits_to_str(int(n_num_s[-6:-3]))
         if thousands == 'bir':
             n_str = 'bin ' + n_str
-        elif thousands == 'sıfır':
+        elif thousands == 'nöl':
             pass
         else:
             n_str = thousands + ' bin ' + n_str
     if n > 6:
         millions = only_3_digits_to_str(int(n_num_s[-9:-6]))
-        if millions == 'sıfır':
+        if millions == 'nöl':
             pass
         else:
             n_str = millions + ' milyon ' + n_str
     if n > 9:
         billions = only_3_digits_to_str(int(n_num_s[-12:-9]))
-        if billions == 'sıfır':
+        if billions == 'nöl':
             pass
         else:
-            n_str = billions + ' milyar ' + n_str
+            n_str = billions + ' milyard ' + n_str
 
     return n_str
 
