@@ -21,10 +21,10 @@ I use common Turkish Alphabet as Uyghur script. It is quite similar to ULY. Here
 Usage is quite simple, for numbers:
 ```
 $ python speller.py -n 92
-doksan iki
+toqsen ikki
 ```
 for dates:
 ```
 $ python speller.py -d 4.5.1992
-dört mayıs bin dokuz yüz doksan iki
+töt may bir ming toqquz yüz toqsen ikki
 ```
