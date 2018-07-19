@@ -61,6 +61,13 @@ def n_2_str(n_num):
 
     return n_str
 
+def dn_2_str(dn_num):
+    index = dn_num.find('.')
+    # import ipdb; ipdb.set_trace()
+    if index!=-1 :
+        return n_2_str(dn_num[:index]) + ' nuqta ' + n_2_str(dn_num[index+1:])
+    else:
+        return n_2_str(dn_num)
 
 def d_2_str(d):
     try:
@@ -79,13 +86,13 @@ def d_2_str(d):
 
 
 if __name__ == '__main__':
-    parser = argparse.ArgumentParser(description='Number or date speller in Turkish')
+    parser = argparse.ArgumentParser(description='Number or date speller in Uyghur')
     arg_group = parser.add_mutually_exclusive_group(required=True)
-    arg_group.add_argument('-n', '--number', help='number to be spelled', type=int, dest='n')
+    arg_group.add_argument('-n', '--number', help='number to be spelled', type=str, dest='n')
     arg_group.add_argument('-d', '--date', help='date to be spelled, as dd.mm.yyyy', type=str, dest='d')
     args = parser.parse_args()
 
     if args.n:
-        print(n_2_str(args.n))
+        print(dn_2_str(args.n))
     else:
         print(d_2_str(args.d))

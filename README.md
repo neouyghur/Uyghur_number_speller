@@ -2,8 +2,7 @@
 python script to spell numbers and dates in Uyghur. This project is is forked from Turkish_number_speller.
 
 # TODO
-- spell decimal number.
-- spell fraction number.
+- spell fraction number. 
 - other from your feedback.
 
 # Noting
